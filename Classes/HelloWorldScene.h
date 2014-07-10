@@ -20,6 +20,10 @@ public:
     
     cocos2d::CCRepeatForever* MyPathFun(float controlX, float controlY, float w);
 	cocos2d::CCParticleSystem* particleInit();
+    
+    virtual void draw();
+    void drawLighting(const cocos2d::CCPoint& beginPoint, const cocos2d::CCPoint& endPoint, int displaceCount, int endCount);
+    void strikeLight(float dt);
 };
 
 #endif // __HELLOWORLD_SCENE_H__

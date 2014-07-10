@@ -100,6 +100,8 @@
 		1AFCDA8216D4A25900906EA6 /* RootViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1AFCDA8116D4A25900906EA6 /* RootViewController.mm */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
+		28132CB8196E85400014E5E1 /* Lightning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28132CB6196E85400014E5E1 /* Lightning.cpp */; };
+		28132CBA196E899C0014E5E1 /* thunderSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 28132CB9196E899C0014E5E1 /* thunderSound.wav */; };
 		284B57E1196B908D00CE1A1B /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57DE196B908D00CE1A1B /* btn.png */; };
 		284B57E2196B908D00CE1A1B /* btn0.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57DF196B908D00CE1A1B /* btn0.png */; };
 		284B57E3196B908D00CE1A1B /* btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57E0196B908D00CE1A1B /* btn1.png */; };
@@ -333,6 +335,9 @@
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D6058910D05DD3D006BFB54 /* hello.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hello.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		28132CB6196E85400014E5E1 /* Lightning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Lightning.cpp; path = ../Classes/Lightning.cpp; sourceTree = "<group>"; };
+		28132CB7196E85400014E5E1 /* Lightning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lightning.h; path = ../Classes/Lightning.h; sourceTree = "<group>"; };
+		28132CB9196E899C0014E5E1 /* thunderSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thunderSound.wav; sourceTree = "<group>"; };
 		284B57DE196B908D00CE1A1B /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 		284B57DF196B908D00CE1A1B /* btn0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn0.png; sourceTree = "<group>"; };
 		284B57E0196B908D00CE1A1B /* btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1.png; sourceTree = "<group>"; };
@@ -674,6 +679,8 @@
 				28DD19AD19667C8000E18C3F /* TableViewLayer.h */,
 				28DD19B119668F8A00E18C3F /* ScrollViewLayer.cpp */,
 				28DD19B219668F8A00E18C3F /* ScrollViewLayer.h */,
+				28132CB6196E85400014E5E1 /* Lightning.cpp */,
+				28132CB7196E85400014E5E1 /* Lightning.h */,
 			);
 			name = Classes;
 			path = ../classes;
@@ -818,6 +825,7 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28132CB9196E899C0014E5E1 /* thunderSound.wav */,
 				284B57E4196B909600CE1A1B /* point.png */,
 				284B57E5196B909600CE1A1B /* star1.png */,
 				284B57DE196B908D00CE1A1B /* btn.png */,
@@ -915,6 +923,7 @@
 			files = (
 				28DD19B819669A5D00E18C3F /* help1.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
+				28132CBA196E899C0014E5E1 /* thunderSound.wav in Resources */,
 				D4EF949A15BD2D8B00D803EB /* Icon-57.png in Resources */,
 				28DD19BF1966A61200E18C3F /* PageControl.png in Resources */,
 				28DD19B919669A5D00E18C3F /* help2.png in Resources */,
@@ -954,6 +963,7 @@
 				15A3D99C1682F7F9002FB0C5 /* cpPinJoint.c in Sources */,
 				15A3D99D1682F7F9002FB0C5 /* cpPivotJoint.c in Sources */,
 				15A3D99E1682F7F9002FB0C5 /* cpRatchetJoint.c in Sources */,
+				28132CB8196E85400014E5E1 /* Lightning.cpp in Sources */,
 				15A3D99F1682F7F9002FB0C5 /* cpRotaryLimitJoint.c in Sources */,
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,

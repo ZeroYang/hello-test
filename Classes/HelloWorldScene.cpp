@@ -8,6 +8,9 @@ USING_NS_CC;
 
 USING_NS_CC_EXT;
 
+#include "Lightning.h"
+#include "SimpleAudioEngine.h"
+
 CCScene* HelloWorld::scene()
 {
     // 'scene' is an autorelease object
@@ -113,6 +116,11 @@ bool HelloWorld::init()
 	_emitter->runAction(MyPathFun(X+10, btnSprite->getContentSize().height, btnSprite->getContentSize().width - X * 2 /*+ starSprite->getContentSize().width*/));
     
     
+    Lightning* l = Lightning::create(ccp(160,640), ccp(200, 20));
+    l->setVisible(false);
+    this->addChild(l, 1, 999);
+    
+    this->schedule(schedule_selector(HelloWorld::strikeLight), 3.0f,kCCRepeatForever,3.0f);
     
 //	//°´Å¥1
 //	auto btnSprite1 = CCSprite::create("btn1.png");
@@ -278,4 +286,51 @@ CCRepeatForever* HelloWorld::MyPathFun(float controlX, float controlY, float w)
 	auto move2 = CCMoveBy::create(0.8f, CCPoint(-w, 0));
 	auto path = CCRepeatForever::create(CCSequence::create(bezierBy1, move1, bezierBy2, move2, NULL));
 	return path;
+}
+
+void HelloWorld::draw()
+{
+    //drawLighting(ccp(100, 900), ccp(400, 100), 500, 10);
+}
+
+void HelloWorld::drawLighting(const CCPoint &beginPoint, const CCPoint &endPoint, int displaceCount, int endCount) {
+    if (displaceCount < endCount) {  //递归终点，displaceCount每次都会衰减为一半
+        ccDrawLine(beginPoint, endPoint);  // 画线
+    } else {
+        // 计算中间点
+        CCPoint mid = ccp((beginPoint.x + endPoint.x) / 2, (beginPoint.y + endPoint.y) / 2);
+        
+        // 随机移动上下，左右移动这个点，注意displace这里控制‘震动’的幅度。
+        mid.x += (CCRANDOM_0_1() - 0.5) * displaceCount;
+        mid.y += (CCRANDOM_0_1() - 0.5) * displaceCount;
+        
+        // 递归上面的算法
+        drawLighting(beginPoint, mid, displaceCount / 2, endCount);
+        drawLighting(endPoint, mid, displaceCount / 2, endCount);
+    }
+}
+
+void HelloWorld::strikeLight(float dt){
+    
+    //CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("thunderSound.wav", true);
+    
+	Lightning *l = (Lightning *)this->getChildByTag(999);
+    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+	srand(time(NULL));
+	//random position
+	l->setStrikePoint(ccp(20 + CCRANDOM_0_1() * winSize.width/2, winSize.height));
+	l->setStrikePoint2(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+	l->setStrikePoint3(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+    
+	//random color
+	l->setColor(ccc3(CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255));
+    
+	//random style
+	l->setDisplacement(100 + CCRANDOM_0_1() * 400);
+	l->setMinDisplacement(4 + CCRANDOM_0_1() * 4);
+	l->setLighteningWidth(2.0f);
+	l->setSplit(true);
+    
+	//call strike
+	l->strikeRandom();
 }
