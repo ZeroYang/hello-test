@@ -120,7 +120,8 @@ bool HelloWorld::init()
     l->setVisible(false);
     this->addChild(l, 1, 999);
     
-    this->schedule(schedule_selector(HelloWorld::strikeLight), 3.0f,kCCRepeatForever,3.0f);
+    this->schedule(schedule_selector(HelloWorld::strikeLight), 2.0f,kCCRepeatForever,3.0f);
+    //strikeLight(0);
     
 //	//°´Å¥1
 //	auto btnSprite1 = CCSprite::create("btn1.png");
@@ -290,7 +291,9 @@ CCRepeatForever* HelloWorld::MyPathFun(float controlX, float controlY, float w)
 
 void HelloWorld::draw()
 {
-    //drawLighting(ccp(100, 900), ccp(400, 100), 500, 10);
+//    
+//    drawLighting(ccp(100, 900), ccp(400, 100), 500, 10);
+//    drawLighting(ccp(100+2, 900), ccp(400, 100), 500, 10);
 }
 
 void HelloWorld::drawLighting(const CCPoint &beginPoint, const CCPoint &endPoint, int displaceCount, int endCount) {
@@ -312,15 +315,15 @@ void HelloWorld::drawLighting(const CCPoint &beginPoint, const CCPoint &endPoint
 
 void HelloWorld::strikeLight(float dt){
     
-    //CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("thunderSound.wav", true);
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("thunderSound.wav", false);
     
 	Lightning *l = (Lightning *)this->getChildByTag(999);
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
 	srand(time(NULL));
 	//random position
-	l->setStrikePoint(ccp(20 + CCRANDOM_0_1() * winSize.width/2, winSize.height));
-	l->setStrikePoint2(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
-	l->setStrikePoint3(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+	l->setBeginPoint(ccp(20 + CCRANDOM_0_1() * winSize.width/2, winSize.height));
+	l->setEndPoint(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+	//l->setStrikePoint3(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
     
 	//random color
 	l->setColor(ccc3(CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255));

@@ -13,7 +13,7 @@
 
 extern int getNextRandom(unsigned long *seed);
 
-extern cocos2d::CCPoint drawLightning(cocos2d::CCPoint pt1, cocos2d::CCPoint pt2, int displace, int minDisplace, unsigned long randSeed);
+extern cocos2d::CCPoint drawLightning(cocos2d::CCPoint beginPoint, cocos2d::CCPoint endPoint, int displace, int minDisplace, unsigned long randSeed);
 
 
 class Lightning : public cocos2d::CCNode, public cocos2d::CCRGBAProtocol {
@@ -24,11 +24,11 @@ protected:
 	cocos2d::ccColor3B	_displayedColor;
 	bool		_cascadeOpacityEnabled, _cascadeColorEnabled;
 public:
-	bool initWithStrikePoint(cocos2d::CCPoint strikePoint);
-	bool initWithStrikePoint(cocos2d::CCPoint strikePoint, cocos2d::CCPoint strikePoint2);
+	bool initWithStrikePoint(cocos2d::CCPoint beginPoint);
+	bool initWithStrikePoint(cocos2d::CCPoint beginPoint, cocos2d::CCPoint endPoint);
     
-    static Lightning* create(cocos2d::CCPoint strikePoint);
-    static Lightning* create(cocos2d::CCPoint strikePoint, cocos2d::CCPoint strikePoint2);
+    static Lightning* create(cocos2d::CCPoint beginPoint);
+    static Lightning* create(cocos2d::CCPoint beginPoint, cocos2d::CCPoint endPoint);
     
 	void strikeRandom();
 	void strikeWithSeed(unsigned long seed);
@@ -45,9 +45,9 @@ public:
     
     
     
-	CC_SYNTHESIZE_PASS_BY_REF(cocos2d::CCPoint, _strikePoint, StrikePoint);
-	CC_SYNTHESIZE_PASS_BY_REF(cocos2d::CCPoint, _strikePoint2, StrikePoint2);
-	CC_SYNTHESIZE_PASS_BY_REF(cocos2d::CCPoint, _strikePoint3, StrikePoint3);
+	CC_SYNTHESIZE_PASS_BY_REF(cocos2d::CCPoint, _beginePoint, BeginPoint);
+	CC_SYNTHESIZE_PASS_BY_REF(cocos2d::CCPoint, _endPoint, EndPoint);
+	//CC_SYNTHESIZE_PASS_BY_REF(cocos2d::CCPoint, _strikePoint3, StrikePoint3);
     
 	CC_SYNTHESIZE(bool, _split, Split);
     

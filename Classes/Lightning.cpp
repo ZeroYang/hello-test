@@ -18,11 +18,11 @@ int getNextRandom(unsigned long *seed)
 	return ((unsigned)((*seed)/65536)%32768);
 }
 
-cocos2d::CCPoint drawLightning(cocos2d::CCPoint pt1, cocos2d::CCPoint pt2, int displace, int minDisplace, unsigned long randSeed){
-	cocos2d::CCPoint mid = ccpMult(ccpAdd(pt1,pt2), 0.5f);
+cocos2d::CCPoint drawLightning(cocos2d::CCPoint beginPoint, cocos2d::CCPoint endPoint, int displace, int minDisplace, unsigned long randSeed){
+	cocos2d::CCPoint mid = ccpMult(ccpAdd(beginPoint,endPoint), 0.5f);
     
 	if (displace < minDisplace)
-		ccDrawLine(pt1, pt2);
+		ccDrawLine(beginPoint, endPoint);
 	else
 	{
 		int r = getNextRandom(&randSeed);
@@ -30,16 +30,16 @@ cocos2d::CCPoint drawLightning(cocos2d::CCPoint pt1, cocos2d::CCPoint pt2, int d
 		r = getNextRandom(&randSeed);
 		mid.y += (((r % 101)/100.0)-.5)*displace;
         
-		drawLightning(pt1,mid,displace/2,minDisplace,randSeed);
-		drawLightning(pt2,mid,displace/2,minDisplace,randSeed);
+		drawLightning(beginPoint,mid,displace/2,minDisplace,randSeed);
+		drawLightning(endPoint,mid,displace/2,minDisplace,randSeed);
 	}
     
 	return mid;
 }
 
-Lightning* Lightning::create(cocos2d::CCPoint strikePoint){
+Lightning* Lightning::create(cocos2d::CCPoint beginPoint){
 	Lightning* l = new Lightning;
-	if(l && l->initWithStrikePoint(strikePoint)){
+	if(l && l->initWithStrikePoint(beginPoint)){
 		l->autorelease();
 		return l;
 	}
@@ -47,9 +47,9 @@ Lightning* Lightning::create(cocos2d::CCPoint strikePoint){
 	return NULL;
 }
 
-Lightning* Lightning::create(cocos2d::CCPoint strikePoint, cocos2d::CCPoint strikePoint2){
+Lightning* Lightning::create(cocos2d::CCPoint beginPoint, cocos2d::CCPoint endPoint){
 	Lightning* l = new Lightning;
-	if(l && l->initWithStrikePoint(strikePoint, strikePoint2)){
+	if(l && l->initWithStrikePoint(beginPoint, endPoint)){
 		l->autorelease();
 		return l;
 	}
@@ -57,14 +57,14 @@ Lightning* Lightning::create(cocos2d::CCPoint strikePoint, cocos2d::CCPoint stri
 	return NULL;
 }
 
-bool Lightning::initWithStrikePoint(cocos2d::CCPoint strikePoint){
-	return initWithStrikePoint(strikePoint, ccp(0, 0));
+bool Lightning::initWithStrikePoint(cocos2d::CCPoint beginPoint){
+	return initWithStrikePoint(beginPoint, ccp(0, 0));
 }
 
-bool Lightning::initWithStrikePoint(cocos2d::CCPoint strikePoint, cocos2d::CCPoint strikePoint2){
-	_strikePoint = strikePoint;
-	_strikePoint2 = strikePoint2;
-	_strikePoint3 = ccp(0, 0);
+bool Lightning::initWithStrikePoint(cocos2d::CCPoint beginPoint, cocos2d::CCPoint endPoint){
+	_beginePoint = beginPoint;
+	_endPoint = endPoint;
+	//_strikePoint3 = ccp(0, 0);
 	_color = ccWHITE;
 	_opacity = 255;
     
@@ -91,11 +91,11 @@ void Lightning::draw(){
 	if (_opacity != 255)
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
-	CCPoint mid = drawLightning(_strikePoint3, _strikePoint, _displacement, _minDisplacement, _seed);
+	CCPoint mid = drawLightning(_beginePoint, _endPoint, _displacement, _minDisplacement, _seed);
 	
 	if(_split) {
-        drawLightning(mid, _strikePoint2, _displacement/2, _minDisplacement, _seed);
-        drawLightning(mid, _strikePoint3, _displacement/2, _minDisplacement, _seed);
+        drawLightning(mid, _endPoint, _displacement/2, _minDisplacement, _seed);
+        drawLightning(mid, _endPoint, _displacement/2, _minDisplacement, _seed);
     }
     
 	if (_opacity != 255)
