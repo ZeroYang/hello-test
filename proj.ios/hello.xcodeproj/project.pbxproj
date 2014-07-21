@@ -102,12 +102,25 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28132CB8196E85400014E5E1 /* Lightning.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28132CB6196E85400014E5E1 /* Lightning.cpp */; };
 		28132CBA196E899C0014E5E1 /* thunderSound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 28132CB9196E899C0014E5E1 /* thunderSound.wav */; };
+		284B28981976688C003DD59D /* LightLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 284B28961976688C003DD59D /* LightLayer.cpp */; };
+		284B289A19766A5C003DD59D /* lightning in Resources */ = {isa = PBXBuildFile; fileRef = 284B289919766A5C003DD59D /* lightning */; };
 		284B57E1196B908D00CE1A1B /* btn.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57DE196B908D00CE1A1B /* btn.png */; };
 		284B57E2196B908D00CE1A1B /* btn0.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57DF196B908D00CE1A1B /* btn0.png */; };
 		284B57E3196B908D00CE1A1B /* btn1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57E0196B908D00CE1A1B /* btn1.png */; };
 		284B57E6196B909600CE1A1B /* point.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57E4196B909600CE1A1B /* point.png */; };
 		284B57E7196B909600CE1A1B /* star1.png in Resources */ = {isa = PBXBuildFile; fileRef = 284B57E5196B909600CE1A1B /* star1.png */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
+		288F28FA1975106500C56571 /* layer_lightningBolt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F28CD1975106500C56571 /* layer_lightningBolt.cpp */; };
+		288F28FB1975106500C56571 /* scene_lightningBolt.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F28CF1975106500C56571 /* scene_lightningBolt.cpp */; };
+		288F29471975111B00C56571 /* ensLightningBoltNode.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F29281975111B00C56571 /* ensLightningBoltNode.cpp */; };
+		288F29601975182300C56571 /* ensDefine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F29521975182300C56571 /* ensDefine.cpp */; };
+		288F29611975182300C56571 /* ensFunc.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F29541975182300C56571 /* ensFunc.cpp */; };
+		288F29621975182300C56571 /* ensGLProgramWithUnifos.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F29561975182300C56571 /* ensGLProgramWithUnifos.cpp */; };
+		288F29631975182300C56571 /* ensIndexVBO.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F29581975182300C56571 /* ensIndexVBO.cpp */; };
+		288F29641975182300C56571 /* ensMath.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F295A1975182300C56571 /* ensMath.cpp */; };
+		288F29651975182300C56571 /* ensMesh.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F295C1975182300C56571 /* ensMesh.cpp */; };
+		288F29661975182300C56571 /* ensSimpleClasses.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 288F295E1975182300C56571 /* ensSimpleClasses.cpp */; };
+		288F2B7C1975215F00C56571 /* shaders in Resources */ = {isa = PBXBuildFile; fileRef = 288F2B7B1975215F00C56571 /* shaders */; };
 		28DD19AE19667C8000E18C3F /* TableViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28DD19AC19667C8000E18C3F /* TableViewLayer.cpp */; };
 		28DD19B0196685FC00E18C3F /* listitem.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DD19AF196685FC00E18C3F /* listitem.png */; };
 		28DD19B319668F8A00E18C3F /* ScrollViewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 28DD19B119668F8A00E18C3F /* ScrollViewLayer.cpp */; };
@@ -116,6 +129,7 @@
 		28DD19BA19669A5D00E18C3F /* help3.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DD19B719669A5D00E18C3F /* help3.png */; };
 		28DD19BE1966A61200E18C3F /* PageControl.plist in Resources */ = {isa = PBXBuildFile; fileRef = 28DD19BC1966A61200E18C3F /* PageControl.plist */; };
 		28DD19BF1966A61200E18C3F /* PageControl.png in Resources */ = {isa = PBXBuildFile; fileRef = 28DD19BD1966A61200E18C3F /* PageControl.png */; };
+		28EFBC821978C1BF0011E211 /* light.png in Resources */ = {isa = PBXBuildFile; fileRef = 28EFBC811978C1BF0011E211 /* light.png */; };
 		7855E0E1153FEF240059DD9A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 7855E0DF153FEF240059DD9A /* Default.png */; };
 		BF171245129291EC00B8313A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB012928DE900B8313A /* OpenGLES.framework */; };
 		BF1712461292920000B8313A /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BF170DB212928DE900B8313A /* libxml2.dylib */; };
@@ -338,12 +352,37 @@
 		28132CB6196E85400014E5E1 /* Lightning.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Lightning.cpp; path = ../Classes/Lightning.cpp; sourceTree = "<group>"; };
 		28132CB7196E85400014E5E1 /* Lightning.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Lightning.h; path = ../Classes/Lightning.h; sourceTree = "<group>"; };
 		28132CB9196E899C0014E5E1 /* thunderSound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thunderSound.wav; sourceTree = "<group>"; };
+		284B28961976688C003DD59D /* LightLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LightLayer.cpp; path = ../Classes/LightLayer.cpp; sourceTree = "<group>"; };
+		284B28971976688C003DD59D /* LightLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LightLayer.h; path = ../Classes/LightLayer.h; sourceTree = "<group>"; };
+		284B289919766A5C003DD59D /* lightning */ = {isa = PBXFileReference; lastKnownFileType = folder; path = lightning; sourceTree = "<group>"; };
 		284B57DE196B908D00CE1A1B /* btn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn.png; sourceTree = "<group>"; };
 		284B57DF196B908D00CE1A1B /* btn0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn0.png; sourceTree = "<group>"; };
 		284B57E0196B908D00CE1A1B /* btn1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn1.png; sourceTree = "<group>"; };
 		284B57E4196B909600CE1A1B /* point.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = point.png; sourceTree = "<group>"; };
 		284B57E5196B909600CE1A1B /* star1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star1.png; sourceTree = "<group>"; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		288F28CD1975106500C56571 /* layer_lightningBolt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = layer_lightningBolt.cpp; sourceTree = "<group>"; };
+		288F28CE1975106500C56571 /* layer_lightningBolt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = layer_lightningBolt.h; sourceTree = "<group>"; };
+		288F28CF1975106500C56571 /* scene_lightningBolt.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scene_lightningBolt.cpp; sourceTree = "<group>"; };
+		288F28D01975106500C56571 /* scene_lightningBolt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scene_lightningBolt.h; sourceTree = "<group>"; };
+		288F29281975111B00C56571 /* ensLightningBoltNode.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensLightningBoltNode.cpp; sourceTree = "<group>"; };
+		288F29291975111B00C56571 /* ensLightningBoltNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensLightningBoltNode.h; sourceTree = "<group>"; };
+		288F29511975182300C56571 /* ensCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensCommon.h; sourceTree = "<group>"; };
+		288F29521975182300C56571 /* ensDefine.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensDefine.cpp; sourceTree = "<group>"; };
+		288F29531975182300C56571 /* ensDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensDefine.h; sourceTree = "<group>"; };
+		288F29541975182300C56571 /* ensFunc.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensFunc.cpp; sourceTree = "<group>"; };
+		288F29551975182300C56571 /* ensFunc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensFunc.h; sourceTree = "<group>"; };
+		288F29561975182300C56571 /* ensGLProgramWithUnifos.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensGLProgramWithUnifos.cpp; sourceTree = "<group>"; };
+		288F29571975182300C56571 /* ensGLProgramWithUnifos.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensGLProgramWithUnifos.h; sourceTree = "<group>"; };
+		288F29581975182300C56571 /* ensIndexVBO.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensIndexVBO.cpp; sourceTree = "<group>"; };
+		288F29591975182300C56571 /* ensIndexVBO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensIndexVBO.h; sourceTree = "<group>"; };
+		288F295A1975182300C56571 /* ensMath.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensMath.cpp; sourceTree = "<group>"; };
+		288F295B1975182300C56571 /* ensMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensMath.h; sourceTree = "<group>"; };
+		288F295C1975182300C56571 /* ensMesh.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensMesh.cpp; sourceTree = "<group>"; };
+		288F295D1975182300C56571 /* ensMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensMesh.h; sourceTree = "<group>"; };
+		288F295E1975182300C56571 /* ensSimpleClasses.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ensSimpleClasses.cpp; sourceTree = "<group>"; };
+		288F295F1975182300C56571 /* ensSimpleClasses.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ensSimpleClasses.h; sourceTree = "<group>"; };
+		288F2B7B1975215F00C56571 /* shaders */ = {isa = PBXFileReference; lastKnownFileType = folder; path = shaders; sourceTree = "<group>"; };
 		28DD19AC19667C8000E18C3F /* TableViewLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = TableViewLayer.cpp; path = ../Classes/TableViewLayer.cpp; sourceTree = "<group>"; };
 		28DD19AD19667C8000E18C3F /* TableViewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = TableViewLayer.h; path = ../Classes/TableViewLayer.h; sourceTree = "<group>"; };
 		28DD19AF196685FC00E18C3F /* listitem.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = listitem.png; sourceTree = "<group>"; };
@@ -354,6 +393,7 @@
 		28DD19B719669A5D00E18C3F /* help3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = help3.png; sourceTree = "<group>"; };
 		28DD19BC1966A61200E18C3F /* PageControl.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = PageControl.plist; sourceTree = "<group>"; };
 		28DD19BD1966A61200E18C3F /* PageControl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PageControl.png; sourceTree = "<group>"; };
+		28EFBC811978C1BF0011E211 /* light.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = light.png; sourceTree = "<group>"; };
 		7855E0DF153FEF240059DD9A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = SOURCE_ROOT; };
 		BF170DB012928DE900B8313A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BF170DB212928DE900B8313A /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
@@ -671,6 +711,10 @@
 		15AA9C4015B7EC450033D6C2 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				284B28961976688C003DD59D /* LightLayer.cpp */,
+				284B28971976688C003DD59D /* LightLayer.h */,
+				288F290A1975111B00C56571 /* effectNodes */,
+				288F28AE1975106500C56571 /* allDemos_code */,
 				1AFAF8B316D35DE700DB1158 /* AppDelegate.cpp */,
 				1AFAF8B416D35DE700DB1158 /* AppDelegate.h */,
 				1AFAF8B516D35DE700DB1158 /* HelloWorldScene.cpp */,
@@ -787,6 +831,67 @@
 			path = lib;
 			sourceTree = "<group>";
 		};
+		288F28AE1975106500C56571 /* allDemos_code */ = {
+			isa = PBXGroup;
+			children = (
+				288F28CC1975106500C56571 /* lightningBolt */,
+			);
+			name = allDemos_code;
+			path = ../Classes/allDemos_code;
+			sourceTree = "<group>";
+		};
+		288F28CC1975106500C56571 /* lightningBolt */ = {
+			isa = PBXGroup;
+			children = (
+				288F28CD1975106500C56571 /* layer_lightningBolt.cpp */,
+				288F28CE1975106500C56571 /* layer_lightningBolt.h */,
+				288F28CF1975106500C56571 /* scene_lightningBolt.cpp */,
+				288F28D01975106500C56571 /* scene_lightningBolt.h */,
+			);
+			path = lightningBolt;
+			sourceTree = "<group>";
+		};
+		288F290A1975111B00C56571 /* effectNodes */ = {
+			isa = PBXGroup;
+			children = (
+				288F29501975182300C56571 /* common */,
+				288F29271975111B00C56571 /* lightningBolt */,
+			);
+			name = effectNodes;
+			path = ../Classes/effectNodes;
+			sourceTree = "<group>";
+		};
+		288F29271975111B00C56571 /* lightningBolt */ = {
+			isa = PBXGroup;
+			children = (
+				288F29281975111B00C56571 /* ensLightningBoltNode.cpp */,
+				288F29291975111B00C56571 /* ensLightningBoltNode.h */,
+			);
+			path = lightningBolt;
+			sourceTree = "<group>";
+		};
+		288F29501975182300C56571 /* common */ = {
+			isa = PBXGroup;
+			children = (
+				288F29511975182300C56571 /* ensCommon.h */,
+				288F29521975182300C56571 /* ensDefine.cpp */,
+				288F29531975182300C56571 /* ensDefine.h */,
+				288F29541975182300C56571 /* ensFunc.cpp */,
+				288F29551975182300C56571 /* ensFunc.h */,
+				288F29561975182300C56571 /* ensGLProgramWithUnifos.cpp */,
+				288F29571975182300C56571 /* ensGLProgramWithUnifos.h */,
+				288F29581975182300C56571 /* ensIndexVBO.cpp */,
+				288F29591975182300C56571 /* ensIndexVBO.h */,
+				288F295A1975182300C56571 /* ensMath.cpp */,
+				288F295B1975182300C56571 /* ensMath.h */,
+				288F295C1975182300C56571 /* ensMesh.cpp */,
+				288F295D1975182300C56571 /* ensMesh.h */,
+				288F295E1975182300C56571 /* ensSimpleClasses.cpp */,
+				288F295F1975182300C56571 /* ensSimpleClasses.h */,
+			);
+			path = common;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -825,6 +930,9 @@
 		78C7DDAA14EBA5050085D0C2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				28EFBC811978C1BF0011E211 /* light.png */,
+				284B289919766A5C003DD59D /* lightning */,
+				288F2B7B1975215F00C56571 /* shaders */,
 				28132CB9196E899C0014E5E1 /* thunderSound.wav */,
 				284B57E4196B909600CE1A1B /* point.png */,
 				284B57E5196B909600CE1A1B /* star1.png */,
@@ -921,6 +1029,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				28EFBC821978C1BF0011E211 /* light.png in Resources */,
 				28DD19B819669A5D00E18C3F /* help1.png in Resources */,
 				7855E0E1153FEF240059DD9A /* Default.png in Resources */,
 				28132CBA196E899C0014E5E1 /* thunderSound.wav in Resources */,
@@ -930,6 +1039,7 @@
 				284B57E6196B909600CE1A1B /* point.png in Resources */,
 				D4EF949C15BD2D8E00D803EB /* Icon-114.png in Resources */,
 				D4EF949E15BD2D9600D803EB /* Icon-72.png in Resources */,
+				284B289A19766A5C003DD59D /* lightning in Resources */,
 				D4EF94A015BD2D9800D803EB /* Icon-144.png in Resources */,
 				28DD19BA19669A5D00E18C3F /* help3.png in Resources */,
 				D41A0AD1160F154A004552AE /* Default-568h@2x.png in Resources */,
@@ -942,6 +1052,7 @@
 				15A3D9961682F7F9002FB0C5 /* CMakeLists.txt in Resources */,
 				284B57E3196B908D00CE1A1B /* btn1.png in Resources */,
 				1AFAF8BC16D35E4900DB1158 /* CloseNormal.png in Resources */,
+				288F2B7C1975215F00C56571 /* shaders in Resources */,
 				1AFAF8BD16D35E4900DB1158 /* CloseSelected.png in Resources */,
 				1AFAF8BE16D35E4900DB1158 /* HelloWorld.png in Resources */,
 			);
@@ -966,7 +1077,10 @@
 				28132CB8196E85400014E5E1 /* Lightning.cpp in Sources */,
 				15A3D99F1682F7F9002FB0C5 /* cpRotaryLimitJoint.c in Sources */,
 				15A3D9A01682F7F9002FB0C5 /* cpSimpleMotor.c in Sources */,
+				284B28981976688C003DD59D /* LightLayer.cpp in Sources */,
+				288F29661975182300C56571 /* ensSimpleClasses.cpp in Sources */,
 				15A3D9A11682F7F9002FB0C5 /* cpSlideJoint.c in Sources */,
+				288F29631975182300C56571 /* ensIndexVBO.cpp in Sources */,
 				15A3D9A21682F7F9002FB0C5 /* cpArbiter.c in Sources */,
 				15A3D9A31682F7F9002FB0C5 /* cpArray.c in Sources */,
 				15A3D9A41682F7F9002FB0C5 /* cpBB.c in Sources */,
@@ -980,10 +1094,12 @@
 				15A3D9AC1682F7F9002FB0C5 /* cpSpaceComponent.c in Sources */,
 				15A3D9AD1682F7F9002FB0C5 /* cpSpaceHash.c in Sources */,
 				15A3D9AE1682F7F9002FB0C5 /* cpSpaceQuery.c in Sources */,
+				288F29611975182300C56571 /* ensFunc.cpp in Sources */,
 				15A3D9AF1682F7F9002FB0C5 /* cpSpaceStep.c in Sources */,
 				28DD19AE19667C8000E18C3F /* TableViewLayer.cpp in Sources */,
 				15A3D9B01682F7F9002FB0C5 /* cpSpatialIndex.c in Sources */,
 				15A3D9B11682F7F9002FB0C5 /* cpSweep1D.c in Sources */,
+				288F28FA1975106500C56571 /* layer_lightningBolt.cpp in Sources */,
 				15A3D9B21682F7F9002FB0C5 /* cpVect.c in Sources */,
 				15A3DA491682F826002FB0C5 /* CCControl.cpp in Sources */,
 				15A3DA4A1682F826002FB0C5 /* CCControlButton.cpp in Sources */,
@@ -996,10 +1112,13 @@
 				15A3DA511682F826002FB0C5 /* CCControlSwitch.cpp in Sources */,
 				15A3DA521682F826002FB0C5 /* CCControlUtils.cpp in Sources */,
 				15A3DA531682F826002FB0C5 /* CCInvocation.cpp in Sources */,
+				288F29601975182300C56571 /* ensDefine.cpp in Sources */,
 				15A3DA541682F826002FB0C5 /* CCScale9Sprite.cpp in Sources */,
+				288F29651975182300C56571 /* ensMesh.cpp in Sources */,
 				15A3DA551682F826002FB0C5 /* CCEditBox.cpp in Sources */,
 				28DD19B319668F8A00E18C3F /* ScrollViewLayer.cpp in Sources */,
 				15A3DA571682F826002FB0C5 /* CCEditBoxImplIOS.mm in Sources */,
+				288F29621975182300C56571 /* ensGLProgramWithUnifos.cpp in Sources */,
 				15A3DA591682F826002FB0C5 /* CCScrollView.cpp in Sources */,
 				15A3DA5A1682F826002FB0C5 /* CCSorting.cpp in Sources */,
 				15A3DA5B1682F826002FB0C5 /* CCTableView.cpp in Sources */,
@@ -1029,6 +1148,7 @@
 				1A8F3B76175E05DA00049216 /* BoneData.cpp in Sources */,
 				1A8F3B77175E05DA00049216 /* CCSkeleton.cpp in Sources */,
 				1A8F3B78175E05DA00049216 /* CCSkeletonAnimation.cpp in Sources */,
+				288F28FB1975106500C56571 /* scene_lightningBolt.cpp in Sources */,
 				1A8F3B79175E05DA00049216 /* extension.cpp in Sources */,
 				1A8F3B7A175E05DA00049216 /* Json.cpp in Sources */,
 				1A8F3B7B175E05DA00049216 /* RegionAttachment.cpp in Sources */,
@@ -1038,6 +1158,8 @@
 				1A8F3B7F175E05DA00049216 /* Skin.cpp in Sources */,
 				1A8F3B80175E05DA00049216 /* Slot.cpp in Sources */,
 				1A8F3B81175E05DA00049216 /* SlotData.cpp in Sources */,
+				288F29471975111B00C56571 /* ensLightningBoltNode.cpp in Sources */,
+				288F29641975182300C56571 /* ensMath.cpp in Sources */,
 				1A8F3B82175E05DA00049216 /* spine-cocos2dx.cpp in Sources */,
 				1AB87035175E0A84005D39BF /* WebSocket.cpp in Sources */,
 				1A9CE8781765A12C000E3062 /* AssetsManager.cpp in Sources */,

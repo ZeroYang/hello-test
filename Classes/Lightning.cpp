@@ -32,6 +32,7 @@ cocos2d::CCPoint drawLightning(cocos2d::CCPoint beginPoint, cocos2d::CCPoint end
         
 		drawLightning(beginPoint,mid,displace/2,minDisplace,randSeed);
 		drawLightning(endPoint,mid,displace/2,minDisplace,randSeed);
+        
 	}
     
 	return mid;
@@ -85,17 +86,22 @@ void Lightning::draw(){
 	glDisable(GL_TEXTURE_2D);
     
 	glColor4ub(_color.r, _color.g, _color.b, _opacity);
-	glLineWidth(_lighteningWidth);
+	glLineWidth(_lighteningWidth * CCRANDOM_0_1() * 4);
 	glEnable(GL_LINE_SMOOTH);
     
 	if (_opacity != 255)
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
 	CCPoint mid = drawLightning(_beginePoint, _endPoint, _displacement, _minDisplacement, _seed);
-	
+//    CCPoint mid1 = drawLightning( ccpSub(_beginePoint, ccp(50, 100)), ccpAdd(_endPoint, ccp(100,100)), _displacement, _minDisplacement, _seed);
+//    CCPoint mid2 = drawLightning(ccpSub(_beginePoint, ccp(100, 200)), ccpAdd(_endPoint, ccp(100,100)), _displacement, _minDisplacement, _seed);
+//	CCPoint mid3 = drawLightning(ccpSub(_beginePoint, ccp(150, 400)), ccpAdd(_endPoint, ccp(100,100)), _displacement, _minDisplacement, _seed);
+    ;
 	if(_split) {
         drawLightning(mid, _endPoint, _displacement/2, _minDisplacement, _seed);
-        drawLightning(mid, _endPoint, _displacement/2, _minDisplacement, _seed);
+//        drawLightning(mid1, _endPoint, _displacement/2, _minDisplacement, _seed);
+//        drawLightning(mid2, _endPoint, _displacement/2, _minDisplacement, _seed);
+//        drawLightning(mid3, _endPoint, _displacement/2, _minDisplacement, _seed);
     }
     
 	if (_opacity != 255)

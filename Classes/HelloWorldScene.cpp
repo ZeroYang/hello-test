@@ -10,6 +10,9 @@ USING_NS_CC_EXT;
 
 #include "Lightning.h"
 #include "SimpleAudioEngine.h"
+#include "layer_lightningBolt.h"
+
+#include "LightLayer.h"
 
 CCScene* HelloWorld::scene()
 {
@@ -93,35 +96,56 @@ bool HelloWorld::init()
     auto layer = CCLayerColor::create(ccc4(0, 0, 0, 255));
 	addChild(layer, -10);
     
-	//°´Å¥
-	auto btnSprite = CCSprite::create("btn.png");
-	btnSprite->setPosition(CCPoint(200, 250));
-	btnSprite->setAnchorPoint(CCPoint(0, 0));
-	this->addChild(btnSprite, 1);
-    
-	auto starSprite = CCSprite::create("star1.png");
-	starSprite->setScale(0.4f);
-	this->addChild(starSprite, 10);
-    
-	auto _emitter = particleInit();
-	starSprite->setPosition(CCPoint(btnSprite->getPosition().x + btnSprite->getContentSize().height / 2 - 4, btnSprite->getPosition().y));
-    
-    
-	_emitter->setPosition(CCPoint(btnSprite->getPosition().x + btnSprite->getContentSize().height / 2 - 6, btnSprite->getPosition().y + 3));
-    
-	float X = btnSprite->getContentSize().height / 2;
-	auto path = MyPathFun(X+10, btnSprite->getContentSize().height, btnSprite->getContentSize().width - X * 2 /*+ starSprite->getContentSize().width*/);
-    
-	starSprite->runAction(path);
-	_emitter->runAction(MyPathFun(X+10, btnSprite->getContentSize().height, btnSprite->getContentSize().width - X * 2 /*+ starSprite->getContentSize().width*/));
+	//
+//	auto btnSprite = CCSprite::create("btn.png");
+//	btnSprite->setPosition(CCPoint(200, 250));
+//	btnSprite->setAnchorPoint(CCPoint(0, 0));
+//	this->addChild(btnSprite, 1);
+//    
+//	auto starSprite = CCSprite::create("star1.png");
+//	starSprite->setScale(0.4f);
+//	this->addChild(starSprite, 10);
+//    
+//	auto _emitter = particleInit();
+//	starSprite->setPosition(CCPoint(btnSprite->getPosition().x + btnSprite->getContentSize().height / 2 - 4, btnSprite->getPosition().y));
+//    
+//    
+//	_emitter->setPosition(CCPoint(btnSprite->getPosition().x + btnSprite->getContentSize().height / 2 - 6, btnSprite->getPosition().y + 3));
+//    
+//	float X = btnSprite->getContentSize().height / 2;
+//	auto path = MyPathFun(X+10, btnSprite->getContentSize().height, btnSprite->getContentSize().width - X * 2 /*+ starSprite->getContentSize().width*/);
+//    
+//	starSprite->runAction(path);
+//	_emitter->runAction(MyPathFun(X+10, btnSprite->getContentSize().height, btnSprite->getContentSize().width - X * 2 /*+ starSprite->getContentSize().width*/));
     
     
     Lightning* l = Lightning::create(ccp(160,640), ccp(200, 20));
     l->setVisible(false);
     this->addChild(l, 1, 999);
     
-    this->schedule(schedule_selector(HelloWorld::strikeLight), 2.0f,kCCRepeatForever,3.0f);
+    //this->schedule(schedule_selector(HelloWorld::strikeLight), 2.0f,kCCRepeatForever,3.0f);
     //strikeLight(0);
+    
+    
+    auto close = CCSprite::create("CloseNormal.png");
+    addChild(close);
+    close->setPosition(ccp(visibleSize.width/2, visibleSize.height/2));
+    CCActionInterval * orbitcamera = CCOrbitCamera::create(30, 10, 0, 45, 180, 90, 0);
+    pSprite->runAction(orbitcamera);
+    
+    
+    CCPointArray * array = CCPointArray::create(20);
+    array->addControlPoint(ccp(0,0));
+    array->addControlPoint(ccp(210,0));
+    array->addControlPoint(ccp(210,240));
+    array->addControlPoint(ccp(0,160));
+    array->addControlPoint(ccp(0,0));
+    
+    CCActionInterval  * CardinalSplineTo=CCCardinalSplineTo::create(3, array, 0);
+    
+    CCRepeatForever *repeat = CCRepeatForever::create(CardinalSplineTo);
+    close->runAction(repeat);
+    
     
 //	//°´Å¥1
 //	auto btnSprite1 = CCSprite::create("btn1.png");
@@ -169,8 +193,8 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 //    TableViewLayer *layer = TableViewLayer::create();
 //    getParent()->addChild(layer);
     
-    CCEditBox *editBox = (CCEditBox*)this->getChildByTag(100);
-    CCLOG("%s",editBox->getText());
+//    CCEditBox *editBox = (CCEditBox*)this->getChildByTag(100);
+//    CCLOG("%s",editBox->getText());
 //    auto *layer = ScrollViewLayer::create();
 //    getParent()->addChild(layer);
     
@@ -183,19 +207,47 @@ void HelloWorld::menuCloseCallback(CCObject* pSender)
 //#endif
 //#endif
     
-    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-    ccBezierConfig bezier;
-    bezier.controlPoint_1 = CCPoint(10,winSize.height/2);
-    bezier.controlPoint_2 = CCPoint(winSize.width/2,winSize.height/3);
-    bezier.endPosition = CCPoint(0, winSize.width);
     
-    CCBezierBy *ac1= CCBezierBy::create(2.0f, bezier);
+    Clayer_lightningBolt *layer = new Clayer_lightningBolt();
+    layer->autorelease();
+    layer->init();
+    getParent()->addChild(layer);
     
-    CCBezierTo *ac2 = CCBezierTo::create(2.0f, bezier);
+//    LightLayer *llayer = LightLayer::create();
+//    getParent()->addChild(llayer);
+//    llayer->setTag(1000);
+//    
+//
+//    this->schedule(schedule_selector(HelloWorld::strikeLight), 2.0f,kCCRepeatForever,3.0f);
     
-    auto sprtite = CCSprite::create("CloseSelected.png");
-    sprtite->runAction(ac2);
-    this->addChild(sprtite);
+    
+//    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+//    
+//    CCPoint start=CCPoint(0,winSize.height);
+//    CCPoint end=CCPoint(winSize.width,0);
+//    
+//    ClightningBoltNode *m_lbNode=new ClightningBoltNode();
+//    m_lbNode->autorelease();
+//    m_lbNode->init(start, end);
+//    addChild(m_lbNode);
+//    lightningBolt::CflashAction*flash=lightningBolt::CflashAction::create(5,0.7);//-1 for repeat forever
+//    m_lbNode->runAction(flash);
+    
+    
+    //CCBezierBy&CCBezierTo
+//    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+//    ccBezierConfig bezier;
+//    bezier.controlPoint_1 = CCPoint(10,winSize.height/2);
+//    bezier.controlPoint_2 = CCPoint(winSize.width/2,winSize.height/3);
+//    bezier.endPosition = CCPoint(0, winSize.width);
+//    
+//    CCBezierBy *ac1= CCBezierBy::create(2.0f, bezier);
+//    
+//    CCBezierTo *ac2 = CCBezierTo::create(2.0f, bezier);
+//    
+//    auto sprtite = CCSprite::create("CloseSelected.png");
+//    sprtite->runAction(ac2);
+//    this->addChild(sprtite);
     
 }
 
@@ -291,6 +343,7 @@ CCRepeatForever* HelloWorld::MyPathFun(float controlX, float controlY, float w)
 
 void HelloWorld::draw()
 {
+
 //    
 //    drawLighting(ccp(100, 900), ccp(400, 100), 500, 10);
 //    drawLighting(ccp(100+2, 900), ccp(400, 100), 500, 10);
@@ -317,23 +370,27 @@ void HelloWorld::strikeLight(float dt){
     
     CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("thunderSound.wav", false);
     
-	Lightning *l = (Lightning *)this->getChildByTag(999);
     CCSize winSize = CCDirector::sharedDirector()->getWinSize();
-	srand(time(NULL));
-	//random position
-	l->setBeginPoint(ccp(20 + CCRANDOM_0_1() * winSize.width/2, winSize.height));
-	l->setEndPoint(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
-	//l->setStrikePoint3(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+    LightLayer *layer = (LightLayer*)getParent()->getChildByTag(1000);
+    layer->light(ccp(winSize.width/2, winSize.height/2));
     
-	//random color
-	l->setColor(ccc3(CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255));
-    
-	//random style
-	l->setDisplacement(100 + CCRANDOM_0_1() * 400);
-	l->setMinDisplacement(4 + CCRANDOM_0_1() * 4);
-	l->setLighteningWidth(2.0f);
-	l->setSplit(true);
-    
-	//call strike
-	l->strikeRandom();
+//	Lightning *l = (Lightning *)this->getChildByTag(999);
+//    CCSize winSize = CCDirector::sharedDirector()->getWinSize();
+//	srand(time(NULL));
+//	//random position
+//	l->setBeginPoint(ccp(20 + CCRANDOM_0_1() * winSize.width/2, winSize.height));
+//	l->setEndPoint(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+//	//l->setStrikePoint3(ccp(20 + CCRANDOM_0_1() * winSize.width, 10));
+//    
+//	//random color
+//	l->setColor(ccc3(CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255, CCRANDOM_0_1() * 255));
+//    
+//	//random style
+//	l->setDisplacement(100 + CCRANDOM_0_1() * 400);
+//	l->setMinDisplacement(4 + CCRANDOM_0_1() * 4);
+//	l->setLighteningWidth(2.0f);
+//	l->setSplit(true);
+//    
+//	//call strike
+//	l->strikeRandom();
 }
